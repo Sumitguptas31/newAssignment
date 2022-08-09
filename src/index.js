@@ -21,15 +21,3 @@ app.listen(process.env.PORT || 3000, function() {
 });
 
 
-//
-// const getBookById = async function(req,res){
-//     try{
-//         const userId = req.params.bookId
-//        const getbook = await BookModel.findOne({ _id: userId })
-//        const reviewdata = await ReviewModel.find()
-//         res.status(200).send({ status: true, message: "sucessfully", result:getbook , reviews: reviewdata})
-//     } catch (error) {
-//         res.status(500).send({ status: false, message: error.message });
-    
-//     }
-// }

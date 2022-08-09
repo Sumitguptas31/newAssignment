@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
 phone: {
     trim: true,
     type: String,
-    required: 'Intern mobile is required',
+    required: 'User mobile is required',
     unique: true,
     validate: {
         validator: function (phone) {

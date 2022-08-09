@@ -1,23 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const UserController = require("../Controllers/UserController")
-const BookController= require("../Controllers/BookController")
-const reviewcontroller= require("../Controllers/ReviewController")
+const projectController= require("../Controllers/projectController")
+const taskController= require("../Controllers/taskController")
 const Middleware= require("../Middlewares/Auth")
 
 
 
-router.post("/register",UserController.CreateUser)
+router.post("/register",UserController.signUp)
 router.post("/login",UserController.loginUser)
-router.post('/books',BookController.createBook)
-router.get('/books',Middleware.authentication,Middleware.authorisation,BookController. getBooksQuery )
-router.get('/books/:bookId',Middleware.authentication,Middleware.authorisation,BookController. getBookById)
-router.put('/books/:bookId',Middleware.authentication,Middleware.authorisation,BookController.updatebook)
-router.delete('/books/:bookId',Middleware.authentication,Middleware.authorisation,BookController.deletebook)
-router.post("/books/:bookId/review",reviewcontroller.createReview)
-router.put('/books/:bookId/review/:reviewId',reviewcontroller.updateReview)
-router.delete("/books/:bookId/review/:reviewId",reviewcontroller.deleteRevByPath)
-
+router.post('/project',projectController.createProject)
+router.get('/project/:projectId',Middleware.authentication,Middleware.authorisation,projectController. getProjectById)
+router.put('/project/:projectId',Middleware.authentication,Middleware.authorisation,projectController.updateProject)
+router.post("/project/:projectId/task",taskController.createTask)
+router.post("/task/:taskId",taskController.getTaskById)
+router.put('/project/:projectId/task/:taskId',taskController.updateTask)
 
 
 

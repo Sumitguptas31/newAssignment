@@ -14,7 +14,7 @@ const isValidRequestBody = function (requestBody) {
 
 
 
-const CreateUser = async function (req, res) {
+const signUp = async function (req, res) {
     try {
         const user = req.body
         const { title, name, email, phone, password } = user
@@ -117,5 +117,5 @@ const loginUser = async function (req, res) {
 
 
 
-module.exports.CreateUser = CreateUser
+module.exports.signUp = signUp
 module.exports.loginUser=loginUser
